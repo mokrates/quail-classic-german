@@ -26,11 +26,18 @@ oee -> oe
 ue  -> ü (not after a/e/q)
 uee -> ue
 sz  -> ß
-szz -> sz
 s   -> ſ
 s \\ -> s
-s.  -> s. (. ~ Punctuation)
-sU  -> su (U -> Upcase-Letter)
+ss WORD-BOUNDARY -> ß 
+
+Haus\\boot   -> Hausboot
+HausBoot     -> Hausboot
+Haus\\Boot   -> HausBoot
+
+Das Mass  -> Das Maß
+Die Masse -> Die Maſſe
+Die Masze -> Die Maße
+
 %s
 " additional-doc)
 		    nil t nil nil nil nil nil nil nil nil t)
@@ -80,7 +87,6 @@ sU  -> su (U -> Upcase-Letter)
 		    ("oee" ["oe"])
 		    ("UEE" ["UE"])
 		    ("uee" ["ue"])
-		    ("szz" ["sz"])
 		    ("ge" ["ge"])
 		    ("eue" ["eue"])
 		    ("Eue" ["Eue"])
@@ -93,13 +99,27 @@ sU  -> su (U -> Upcase-Letter)
   (mo-def-quail "classic-german-z"
 		"KDEz<"
 		"z -> ʒ
-z \\ -> z"
+szz   -> ſʒ 
+sZ    -> sʒ
+z \\ -> z
+
+Die AusZeichnung  ->  Die Ausʒeichnung
+faszzinierend     ->  faſʒinierend"
+		
 		(("z" ?ʒ)
+		 ("szz" ["ſʒ"])
+		 ("sZ" ["sʒ"])
+		 ("szz\\" ["ſz"])
 		 ("z\\" ?z)
-		 ("sZ" ["ſʒ"])
-		 ("sZ\\" ["ſz"])))
+))
   
   (mo-def-quail "classic-german"
 		"KDE<"
-		""
-		(("sZ" ["sz"]))))
+		"szz -> ſz
+sZ -> sz
+
+Die AusZeichnung   ->  Die Auszeichnung
+faszzinierend      ->  faſzinierend"
+		
+		(("sZ" ["sz"])
+		 ("szz" ["ſz"]))))

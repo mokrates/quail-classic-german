@@ -58,8 +58,9 @@ sz:
 	
 ### Ausnahmen
 
-    fasZinierend -> faſʒinierend
-	ausSieben    -> ausſieben
+    faszzinierend    -> faſʒinierend
+	ausschuetten     -> ausſchütten
+	Die AusZeichnung -> Die Ausʒeichnung
 
 ## Liʒenʒ:
 
