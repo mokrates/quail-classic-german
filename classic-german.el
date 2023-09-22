@@ -77,10 +77,18 @@ Die Masze -> Die Maße
 		    ("sM" ["sm"]) ("sN" ["sn"]) ("sO" ["so"]) ("sP" ["sp"]) ("sQ" ["sq"]) ("sR" ["sr"])
 		    ("sS" ["sſ"])   ;; !!!
 		    ("sT" ["st"]) ("sU" ["su"]) ("sV" ["sv"]) ("sW" ["sw"]) ("sX" ["sx"]) ("sY" ["sy"])
-		    ;; sZ is missing. -> see below		    
-
+		    ;; sZ is missing. -> see below
 		    ("sAe" ["sä"]) ("sOe" ["sö"]) ("sUe" ["sü"])
-		    
+
+		    ;; composite like "GrossEltern -> Großeltern"
+    		    ("ssA" ["ßa"]) ("ssB" ["ßb"]) ("ssC" ["ßc"]) ("ssD" ["ßd"]) ("ssE" ["ße"]) ("ssF" ["ßf"])
+		    ("ssG" ["ßg"]) ("ssH" ["ßh"]) ("ssI" ["ßi"]) ("ssJ" ["ßj"]) ("ssK" ["ßk"]) ("ssL" ["ßl"])
+		    ("ssM" ["ßm"]) ("ssN" ["ßn"]) ("ssO" ["ßo"]) ("ssP" ["ßp"]) ("ssQ" ["ßq"]) ("ssR" ["ßr"])
+		    ("ssS" ["ßſ"])   ;; !!!
+		    ("ssT" ["ßt"]) ("ssU" ["ßu"]) ("ssV" ["ßv"]) ("ssW" ["ßw"]) ("ssX" ["ßx"]) ("ssY" ["ßy"])
+		    ("ssAe" ["ßä"]) ("ssOe" ["ßö"]) ("ssUe" ["ßü"])
+
+		    ;; Umlauts   
 		    ("AEE" ["AE"])
 		    ("aee" ["ae"])
 		    ("OEE" ["OE"])
@@ -94,12 +102,13 @@ Die Masze -> Die Maße
 		    ("Aue" ["Aue"])
 		    ("que" ["que"])
 		    ("Que" ["Que"])
-		    ,@additional-substitutions
-		    ))))
+		    ,@additional-substitutions))))
+  
   (mo-def-quail "classic-german-z"
 		"KDEz<"
 		"z -> ʒ
-szz   -> ſʒ 
+szz   -> ſʒ
+ssz   -> ſſʒ
 sZ    -> sʒ
 z \\ -> z
 
@@ -108,7 +117,9 @@ faszzinierend     ->  faſʒinierend"
 		
 		(("z" ?ʒ)
 		 ("szz" ["ſʒ"])
+		 ("ssz" ["ſſʒ"])
 		 ("sZ" ["sʒ"])
+		 ("ssZ" ["ßʒ"])
 		 ("szz\\" ["ſz"])
 		 ("z\\" ?z)
 ))
@@ -116,10 +127,13 @@ faszzinierend     ->  faſʒinierend"
   (mo-def-quail "classic-german"
 		"KDE<"
 		"szz -> ſz
+ssz   -> ſſz
 sZ -> sz
 
 Die AusZeichnung   ->  Die Auszeichnung
 faszzinierend      ->  faſzinierend"
 		
 		(("sZ" ["sz"])
-		 ("szz" ["ſz"]))))
+		 ("szz" ["ſz"])
+		 ("ssz" ["ſſz"])
+		 ("ssZ" ["ßz"]))))
